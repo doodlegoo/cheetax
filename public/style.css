@@ -238,7 +238,12 @@ boxes
 	position: fixed;
 	width: 100px;
 	height: 200px;
+  color: white;
+  line-height: 200px;
+  text-align: center;
+  font-size: 16px;
 }
+
 
 #d_auto { left:0; top: 25px; } /* gas, automobile */
 #d_office { left:0; top: 225px; } /* espace bureau, fourniture, equipement, assurance */

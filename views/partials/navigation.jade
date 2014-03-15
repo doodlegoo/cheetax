@@ -6,14 +6,14 @@
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/expenses') Project name
+      a.navbar-brand(href='/expenses')="Project name"
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         li(class=title=='Expenses'?'active':undefined)
-          a(href='/expenses' )Dépenses
+          a(href='/expenses' )="Dépenses"
       ul.nav.navbar-nav
         li(class=title=='Historic'?'active':undefined)
-          a(href='/historic' )Historique
+          a(href='/historic' )="Historique"
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=title=='Login'?'active':undefined)
