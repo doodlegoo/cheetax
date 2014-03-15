@@ -19,6 +19,7 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+var expensesController = require('./controllers/expenses');
 
 /**
  * API keys + Passport configuration.
@@ -52,7 +53,7 @@ var month = (day * 30);
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', "jade");
 app.use(connectAssets({
   paths: ['public/css', 'public/js'],
   helperContext: app.locals
@@ -140,6 +141,7 @@ app.get('/api/twitter', passportConf.isAuthenticated, passportConf.isAuthorized,
 app.get('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getVenmo);
 app.post('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.postVenmo);
 app.get('/api/linkedin', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getLinkedin);
+app.get('/expenses', expensesController.getExpenses);
 
 /**
  * OAuth routes for sign-in.

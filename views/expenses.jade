@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  - if (expenses.length === 0) {
+    .page-header
+      p= "No expenses"
+  - } else {
+    - for (var i = 0; i < expenses.length; i++) {
+      - var expenseName = expenses && expenses[i].id || "No expense";
+      .section-header
+        h3= expenseName
+
+      - if (expenses[i]) {
+        ul
+          - for (var j = 0; j < expenses[i].items.length; j++) {
+            - var expenseItemAmount = expenses && expenses[i].items[j].amount || "";
+            li= expenseItemAmount
+          - }
+      - }
+    - }
+  - }
