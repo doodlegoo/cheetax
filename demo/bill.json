@@ -1,45 +1,49 @@
 {
   "shop": {
-    "name":"IGA",
-    "location": "Sherbrooke",
+    "name":"IGA"
+    "location": "Sherbrooke"
     "telephone": 18191234567
-  },
+  }
   "idTaxe": [  
   {
-      "type": "TVQ",
+      "type": "TVQ"
       "number": 1000534711
     },
     {
-      "type": "TPS",
+      "type": "TPS"
       "number": 104902135
-    }
+    },
   ],
   "date" : "2013-10-25",
   "time" : "13:37",
   "items":[
     {
-      "name" : "24-pack Budweiser",
-      "price": 27.99,
-      "quantity": 5,
+      "name" : "24-pack Budweiser"
+	  "sku" : 12143
+      "price": 27.99
+      "quantity": 5
       "taxable": true
     },
     {
-      "name" : "Redbull",
-      "price": 2.99,
-      "quantity": 1,
+      "name" : "Redbull"
+	  "sku" : 09323
+      "price": 2.99
+      "quantity": 1
       "taxable": true
     },
     {
-      "name" : "Kleenex",
-      "price": 1.20,
-      "quantity": 5,
+      "name" : "Kleenex"
+	  "sku" : 65621
+      "price": 1.20
+      "quantity": 5
       "taxable": true
     },
     {
-      "name" : "Gaz",
-      "price": 70,
+      "name" : "Gaz"
+	  "sku" : 14242
+      "price": 70
       "taxable": false
-    }
-  ]
+    },
+  ],
     
 }

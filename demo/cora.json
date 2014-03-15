@@ -1,0 +1,43 @@
+{
+  "shop": {
+    "name":"Cora"
+    "location": "Sherbrooke"
+    "telephone": 181912345986
+  }
+  "idTaxe": [  
+  {
+      "type": "TVQ"
+      "number": 1000687359
+    },
+    {
+      "type": "TPS"
+      "number": 104908945
+    },
+  ],
+  "date" : "2013-10-22",
+  "time" : "10:37",
+  "items":[
+    {
+      "name" : "Spécial Cora"
+	  "sku" : 97566
+      "price": 13.99
+      "quantity": 1
+      "taxable": true
+    },
+    {
+      "name" : "Crêpe Choco-Banane"
+	  "sku" : 98654
+      "price": 11.99
+      "quantity": 1
+      "taxable": true
+    },
+    {
+      "name" : "café"
+	  "sku" : 10000
+      "price": 0.70
+      "quantity": 2
+      "taxable": true
+    },
+  ],
+    
+}
