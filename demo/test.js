@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/cheetax');
 var db = mongoose.connection;
 
-var data = require(process.argv[2]);
+var data = require("./bill.json");
 
 
 db.on('error', console.error.bind(console, 'connection error:'));
