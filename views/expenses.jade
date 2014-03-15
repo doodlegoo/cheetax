@@ -13,11 +13,11 @@ div(class="receipt")
         - }
 
     div(class="items")
-    - for (var j = 0; j < expenses[i].item.length; ++j) {
-      div(class="item")
-        div(class="item_name")= expenses[i].item[j].item_name
-        div(class="item_price")= expenses[i].item[j].item_price
-    - }
+      - for (var j = 0; j < expenses[i].item.length; ++j) {
+        div(class="item")
+          div(class="item_name")= expenses[i].item[j].item_name
+          div(class="item_price")= expenses[i].item[j].item_price
+      - }
 - }
 
 include footer.html
