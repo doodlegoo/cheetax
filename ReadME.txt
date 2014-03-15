@@ -1,1 +1,3 @@
-Cheetax
+# Cheetax, an Hack.SH project
+
+
