@@ -20,6 +20,7 @@ var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 var expensesController = require('./controllers/expenses');
+var historicController = require('./controllers/historic');
 
 /**
  * API keys + Passport configuration.
@@ -142,6 +143,7 @@ app.get('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, a
 app.post('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.postVenmo);
 app.get('/api/linkedin', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getLinkedin);
 app.get('/expenses', expensesController.getExpenses);
+app.get('/historic', historicController.getHistoric);
 app.post('/classifyReceipts', expensesController.classifyExpenses);
 
 /**

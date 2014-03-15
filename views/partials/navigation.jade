@@ -10,7 +10,10 @@
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         li(class=title=='Expenses'?'active':undefined)
-          a(href='/') Dépenses
+          a(href='/expenses' )Dépenses
+      ul.nav.navbar-nav
+        li(class=title=='Historic'?'active':undefined)
+          a(href='/historic' )Historique
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=title=='Login'?'active':undefined)

@@ -1,0 +1,341 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+hack.sh - cheetax
+*/
+
+/*
+This site use rem font dimension
+
+html { font-size: 62.5%; } 
+body { font-size: 1.4rem; } =14px
+h1   { font-size: 2.4rem; } =24px
+
+this is supported by :
+Safari5, Chrome, FF3.6, IE9, Opera 11.6
+
+For previous browser, use pixel like this :
+html { font-size: 62.5%; } 
+body {  
+  font-size: 14px;
+  font-size: 1.4rem; =14px; 
+}
+
+*/
+
+html {
+	font-family: 'Duru Sans', sans-serif;
+	font-size: 62.5%;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	min-width: 960px;
+}
+h3 { 
+	font-size: 18px;
+	padding: 15px;
+	margin: 15px;
+	background-color: #aaa;
+}
+h4 { 
+	font-size: 16px;
+	padding: 12px;
+	margin: 15px;
+	background-color: #ddd;
+}
+h5 { 
+	padding: 12px;
+	margin: 15px;
+	background-color: #eee;
+}
+
+form {
+	font-size: 14px;
+	padding: 20px;
+}
+/*
+loop
+*/
+.receipt {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	padding: 20px;
+	cursor: pointer;
+}
+
+.store {
+  font-size: 24px;
+  font-size: 2.4rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.details {
+	display: table;
+	margin: 0 auto;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.details {  
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.date {
+	display: table-cell;
+  text-align: center;
+  padding: 5px 20px;
+  float: left;
+
+}
+
+.tax {
+	display: table-cell;
+  text-align: center;
+  padding: 5px 20px;
+  border-left: 1px solid black;
+}
+
+.items {
+	width: 60%;
+	display: block;
+	margin: 0 auto;
+
+}
+
+.item {
+	display: block;
+	width: 90%;
+	padding: 15px 15px;
+	height: 10px;
+	line-height: 10px;
+	cursor: move;
+	background-color: white;
+}
+
+.drag {
+	z-index: 999;
+	opacity: 0.5;
+}
+.item_name {
+	display: table-cell;
+	float: left;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.item_price {
+	display: table-cell;
+	float: right;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+/*
+menu
+*/
+
+#menu {
+	position: absolute;
+	width: 100%;
+	min-width: 960px;
+	height: 25px;
+	background-color: #000;
+	color: white;
+}
+
+#menu ul {
+	text-align: center;
+}
+
+#menu li {
+	display: inline-block;
+}
+
+#menu a {
+	position: relative;
+	text-decoration: none;
+	color: white;
+	height: 25px;
+	line-height: 25px;
+	margin:0 25px;
+}
+
+.setting:before {
+	content: '';
+	position: absolute;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+  	right: 35px;
+	background: url('img/settings.png');
+
+
+}
+
+/*
+boxes
+*/
+
+.boxes {
+	display: block;
+	opacity: 0;
+	position: fixed;
+	width: 100px;
+	height: 200px;
+}
+
+#d_auto { left:0; top: 25px; } /* gas, automobile */
+#d_office { left:0; top: 225px; } /* espace bureau, fourniture, equipement, assurance */
+#d_health { left:0; top: 425px; } /* assurance, medicament, frais chiro... */
+#d_reps { right:0; top: 25px; } /* representation, divertissement, relation client */
+#d_perso { right:0; top: 225px; }
+#d_extra { right:0; top: 425px; }
+
+.d_auto,
+.d_office,
+.d_health,
+.d_reps,
+.d_perso,
+.d_extra,
+.good,
+.error {
+ color: white;
+}
+
+#d_auto, .d_auto { background-color: #777777;} /* perso */
+#d_office, .d_office { background-color: #2481ff;}
+#d_health, .d_health { background-color: #ff7200;}
+#d_reps, .d_reps { background-color: #ff0060;}
+#d_perso, .d_perso { background-color: #004273;}
+#d_extra, .d_extra { background-color: #5d0b75;}
+
+#good { background-color: #59c700;}
+#error { background-color: #c80000;}
+
+.hidden {
+	opacity: 0;
+}
+
+.visible {
+	opacity: 1;
+}
+
+.highlight {
+   box-shadow: 0 0 0 5px rgba(0,0,0,0.3) inset;
+}
+
+/*
+setting - slider
+*/
+
+.slider {
+	width: 70%;
+	margin: 0 auto;
+}
+
+/* 
+submit
+*/
+
+#submit {
+	display: block;
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	bottom:0;
+	background-color: #59c700;
+	line-height: 50px;
+	  font-size: 24px;
+	  font-size: 2.4rem;
+	  text-align: center;
+	  cursor:pointer;
+	transition-duration: 0.5s;
+}
+
+.submitHover {
+	background-color: #bcff86!important;
+}
+
+/*
+splash
+*/
+
+#splash {
+    position: fixed;
+    display: block;
+    text-align:left;
+    line-height: 100%;
+    width: 100%;
+    height: 100%;
+    background-color : white;
+    z-index:999;
+}
+
+#logo {
+	width: 500px;
+	margin: 0 auto;
+    display: block;
+    height: 100%;
+    vertical-align: middle;
+
+}
+
+.spacer {
+	height: 50px;
+}

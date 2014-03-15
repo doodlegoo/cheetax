@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Duru+Sans' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+  $(function() {
+
+$( "#submit" ).hover(
+  function() {
+    $( this ).addClass('submitHover');
+    console.log('over');
+  }, function() {
+    $( this ).removeClass('submitHover');
+    console.log('out');
+  }
+);
+
+$( "#submit" ).click(function() {
+	console.log('/////');
+	$('.receipt').each(function () {
+		console.log('receipt');
+
+		var found_without_d = false;
+		$(this).find('.item').each(function () {
+			// console.log($(this).attr('class'));
+			if ($(this).attr('class').indexOf("d_") == -1) {
+			 // console.log('do not contains d_ class' + $(this).attr('class'));
+			 found_without_d = true;
+			 return false;
+			}
+			 
+		})
+		if(found_without_d) {
+		         //console.log('item without d_ class');
+		         // nothing
+		     } else {
+		     	$(this).animate({
+    				opacity: 0
+    			}, 200, function() {
+  					
+  					$(this).remove();
+	        
+				  });
+
+		         // console.log('all with d_ class');
+		     }
+	})
+	console.log('\\\\');
+})
+  	/* define global variable */
+  	var_timeout = {
+	  remind: function(aMessage) {
+	    alert(aMessage);
+	    delete this.timeoutID;
+	  },
+
+	  setup: function() {
+	    this.cancel();
+	    var self = this;
+	    this.timeoutID = setTimeout(function(){
+	  			
+
+	  			$('.boxes').animate({
+    				opacity: 0
+    			}, 200, function() {
+  				$('.boxes').removeClass('visible');
+				    $('.boxes').addClass('hidden');
+	        
+				  });
+	  			
+	    }, 5000);
+	  },
+	  cancel: function() {
+	    if(typeof this.timeoutID == "number") {
+	      window.clearTimeout(this.timeoutID);
+	      delete this.timeoutID;
+	    }
+	  }
+	};
+
+  	function openUI(){
+
+		$('.boxes').animate({
+				opacity: 1
+			}, 200, function() {
+			  	$('.boxes').removeClass('hidden');
+		  		$('.boxes').addClass('visible');
+	    
+		});
+
+  		var_timeout.setup();
+  	}
+
+/*
+  	function closeUI() {
+  		setTimeout(function(){
+	  		if(var_open != true) {
+	  			console.log('closeUI');
+
+  				$('.boxes').removeClass('visible');
+	  			$('.boxes').addClass('hidden');
+	        }
+	    }, 5000);
+  	}
+*/
+    $( ".item" ).draggable({ 
+
+		opacity: 0.35,
+		zIndex: 100,
+		revertDuration: 200,
+		tolerance: "pointer",
+
+		start: function (event, ui) {
+			openUI();
+		},
+
+        revert: function (dropTarget) {
+
+          /* remove target class */
+           $(this).removeClass();
+
+          /* add target class */          
+          $(this).addClass( 'item' );
+
+          var dropTargetId = $(dropTarget).attr('id');
+          $(this).addClass( dropTargetId );
+
+                return true;
+        }
+    });
+     $( ".receipt" ).draggable({ 
+
+		opacity: 0.35,
+		zIndex: 100,
+		revertDuration: 200,
+		tolerance: "pointer",
+
+		start: function (event, ui) {
+			openUI();
+		},
+
+
+        revert: function (dropTarget) {
+
+          /* remove target class */
+           $(this).find(".item").removeClass();
+
+          /* add target class */          
+          $(this).find(".items").children().addClass( 'item' );
+
+          var dropTargetId = $(dropTarget).attr('id');
+          $(this).find(".items").children().addClass( dropTargetId );
+
+          return true;
+        }
+    });
+    $( ".boxes" ).droppable({
+		tolerance: "pointer",
+      over: function( event, ui ) {
+       $( this ).addClass( "highlight" );
+      },
+      out: function (event, ui ) {
+       $( this ).removeClass( "highlight" );
+      },
+      drop: function (event, ui ) {
+       $( this ).removeClass( "highlight" );
+      }
+    });
+
+/* splash animation */
+        $( '#splash' ).delay( 1000 ).fadeOut( 600, function() {
+            // Animation complete.
+            $(this).remove();
+        });
+  });
+  </script> 
+
+</head>
+<body>
+	<div id="menu">
+		<ul>
+			<li><a href="expenses">queue</a></li>
+			<li><a href="historic">historic</a></li>
+			<li><a href="setting.html" class="setting">setting</a></li>
+		</ul>
+	</div> <!-- #menu -->
+	<div id="submit">
+		Submit
+	</div><!-- #submit -->
+	<!-- #boxes -->
+		<div id="d_auto" class="boxes">auto</div>
+		<div id="d_office" class="boxes">office</div>
+		<div id="d_health" class="boxes">health</div>
+		<div id="d_reps" class="boxes">reps</div>
+		<div id="d_perso" class="boxes">perso</div>
+		<div id="d_extra" class="boxes">extra</div>
+
+	<div class="spacer"></div>

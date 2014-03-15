@@ -1,23 +1,23 @@
-extends layout
+include header.html
+include splash.html
 
-block content
-  - if (expenses.length === 0) {
-    .page-header
-      p= "No expenses"
-  - } else {
-    - for (var i = 0; i < expenses.length; i++) {
-      - var expenseName = "myID" || expenses && expenses[i].id || "No expense";
-      form.section-header(id=expenseName)
-        h3= expenseName
+- for (var i = 0; i < expenses.length; ++i) {
+div(class="receipt")
+  div(class="store")= expenses[i].store_name
+    div(class="details")
+      ul
+        li(class="date")= expenses[i].date
 
-        - if (expenses[i]) {
-          ul
-            - for (var j = 0; j < expenses[i].items.length; j++) {
-              - var expenseItemAmount = expenses && expenses[i].items[j].amount || "";
-              li= expenseItemAmount
-            - }
+        - for (var j = 0; j < expenses[i].tax.length; ++j) {
+          li(class="tax")= expenses[i].tax[j].tax
         - }
-        input(type='hidden', name='_csrf', value=token)
-        button(class="submitBtn", onclick="alert(\"Submitted\")") Soumettre
+
+    div(class="items")
+    - for (var j = 0; j < expenses[i].item.length; ++j) {
+      div(class="item")
+        div(class="item_name")= expenses[i].item[j].item_name
+        div(class="item_price")= expenses[i].item[j].item_price
     - }
-  - }
+- }
+
+include footer.html

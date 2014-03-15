@@ -1,0 +1,21 @@
+include header.html
+include splash.html
+
+- for (var i = 0; i < expenses.length; ++i) {
+  div(class="receipt")
+    div(class="store") expenses[i].store_name
+      div(class="details")
+        ul
+          li(class="date") expenses[i].date
+          - for (var j = 0; j < expenses[i].tax.length; ++j) {
+              li(class="tax") expenses[i].tax[j].tax
+          - }
+      div(class="items")
+      - for (var j = 0; j < expenses[i].item.length; ++j) {
+        div(class="item")
+          div(class="item_name") expenses[i].item[j].item_name
+          div(class="item_price") expenses[i].item[j].item_price
+    - }
+- }
+
+include footer.html

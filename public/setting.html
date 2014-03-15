@@ -1,0 +1,155 @@
+﻿<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href='http://fonts.googleapis.com/css?family=Duru+Sans' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+  $(function() {
+	
+    $( "#slider_01" ).slider({
+      value:0,
+      min: 0,
+      max: 100,
+      step: 5,
+      slide: function( event, ui ) {
+		var b1 = 100;
+        $( "#amount_01" ).val( "%" + ui.value );
+		$( "#amount_02" ).val( "%" + (b1-Number(ui.value)) );
+      }
+    });
+    $( "#amount_01" ).val( "%" + $( "#slider_01" ).slider( "value" ) );
+	$( "#amount_02" ).val( "%" + $( "#slider_01" ).slider( "value" ) );
+  });
+</script>
+</head>
+<body>
+  <div id="menu">
+    <ul>
+      <li><a href="expenses">queue</a></li>
+      <li><a href="historic">historic</a></li>
+      <li><a href="setting.html" class="setting">setting</a></li>
+    </ul>
+  </div> <!-- #menu -->
+  <div class="spacer"></div>
+<form align="left">
+<h3>Setting</h3>
+
+<h4>Auto</h4>
+<p>Date d'Achat: <input type="text" id="Date1" value="JJ">/<input type="text" id="Date2" value="MM">/<input type="text" id="Date3" value="AAAA"></p>
+
+<div class="slider">
+<h5>Utilisation de l'Auto</h5>
+  <label for="amount_01">Personnel:</label>
+  <input type="text" id="amount_01" style="border:0; color:#f6931f; font-weight:bold;">
+  
+  <label for="amount_02">Affaire:</label>
+  <input type="text" id="amount_02" style="border:0; color:#f6931f; font-weight:bold;">
+
+<div id="slider_01"></div>
+</p>
+</div>
+
+
+<script>
+function avancement() {
+  var ava = document.getElementById("avancement");
+  var prc = document.getElementById("pourcentage");
+  prc.innerHTML = ava.value + "%";
+}
+
+
+avancement();
+
+function modif(val) {
+     var ava = document.getElementById("avancement");
+     if((ava.value+val)<=ava.max && (ava.value+val)>=0  {
+              ava.value += val;
+     }
+     avancement ();
+     }
+</script>
+
+<h4>Office</h4>
+
+
+    <h5>Programme informatique</h5>
+	Avez-vous acquis un nouveau programme dans l'année?
+	      Oui<input type="checkbox" name="Oui">
+          Non<input type="checkbox" name="Non">
+<br>
+    Avez-vous une license(s) d'une durée limité?
+          Oui<input type="checkbox" name="Oui">
+          Non<input type="checkbox" name="Non">
+<br>
+Durée de license:
+          1 an<input type="checkbox" name="Oui">
+          2 ans<input type="checkbox" name="Non">
+          3 ans<input type="checkbox" name="Non">
+<br>
+Nombre de license:
+         <input type="text" id="license1" value="0">
+<br>
+Date d'activation de la license:
+<input type="text" id="Date1" value="JJ">/<input type="text" id="Date2" value="MM">/<input type="text" id="Date3" value="AAAA">
+<br>
+        <h5>Équipement informatique</h5>
+Avez-vous un ordinateur(s)?
+Oui<input type="checkbox" name="Oui">
+Non<input type="checkbox" name="Non">
+<br>
+Date d'acquisition de l'ordinateur:
+<input type="text" id="Date1" value="JJ">/<input type="text" id="Date2" value="MM">/<input type="text" id="Date3" value="AAAA">
+        <h5>Espace de travail</h5>
+Quel est la proportion d'espace physique de la résidence utilisé comme lieu d'affaire?
+<input type="text" id="propor1" value="0">%
+
+<h4>Health</h4>
+
+    <h5>Médicament</h5>
+Avez-vous une assurance médicament privée?
+Oui<input type="checkbox" name="Oui">
+Non<input type="checkbox" name="Non">
+<br>
+        <h5>Soins de santé</h5>
+Avez-vous une assurance santé privée?
+Oui<input type="checkbox" name="Oui">
+Non<input type="checkbox" name="Non">
+
+
+<h4>Représentation</h4>
+
+    <h5>Frais de repas </h5>
+les Frais de repas sont tous engagés dans un rayon de 40 kilomètres du lieu d'affaire?
+<br>
+Oui<input type="checkbox" name="Oui">
+Non<input type="checkbox" name="Non">
+
+    <h5>Frais de représentation</h5>
+Est-ce que cette catégorie de frais contient:
+<br>
+Contient des frais pour jouer au golf?
+Oui<input type="checkbox" name="Oui">
+Non<input type="checkbox" name="Non">
+<br>
+Des Droits d'adhésion à un club de golf?
+Oui<input type="checkbox" name="Oui">
+Non<input type="checkbox" name="Non">
+<br>
+Des cotisations à un club d'activités sportives?
+Oui<input type="checkbox" name="Oui">
+Non<input type="checkbox" name="Non">
+<br>
+
+<h4>Personnel</h4>
+Désirez-vous partager les éléments de cette catégorie?
+Oui<input type="checkbox" name="Oui">
+Non<input type="checkbox" name="Non">
+<br>
+<br>
+<input type="submit" value="Save"><input type="submit" value="Cancel">
+</form>
+</body>
+

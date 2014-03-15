@@ -25,7 +25,7 @@ $(document).ready(function() {
          }
      }
   });
-  
+  /*
   postMyData = function postMyDataFn(myFormID, inputCsrfValue) {
     $.ajax({
       type: "POST",
@@ -36,6 +36,6 @@ $(document).ready(function() {
     },
   dataType: "form"
 });
-  }
+  }*/
 
 });
