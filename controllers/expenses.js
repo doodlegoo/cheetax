@@ -39,3 +39,17 @@ exports.getExpenses = function(req, res) {
   }
 };
 
+/**
+ * POST /classifyExpenses
+ * Update expense data.
+ */
+
+exports.classifyExpenses = function (req, res) {
+  var data = "";
+  req.on("data", function (chunk) {
+    data += chunk;
+  });
+  req.on("end", function () {
+    res.end("Received");
+  });
+};

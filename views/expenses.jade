@@ -6,16 +6,18 @@ block content
       p= "No expenses"
   - } else {
     - for (var i = 0; i < expenses.length; i++) {
-      - var expenseName = expenses && expenses[i].id || "No expense";
-      .section-header
+      - var expenseName = "myID" || expenses && expenses[i].id || "No expense";
+      form.section-header(id=expenseName)
         h3= expenseName
 
-      - if (expenses[i]) {
-        ul
-          - for (var j = 0; j < expenses[i].items.length; j++) {
-            - var expenseItemAmount = expenses && expenses[i].items[j].amount || "";
-            li= expenseItemAmount
-          - }
-      - }
+        - if (expenses[i]) {
+          ul
+            - for (var j = 0; j < expenses[i].items.length; j++) {
+              - var expenseItemAmount = expenses && expenses[i].items[j].amount || "";
+              li= expenseItemAmount
+            - }
+        - }
+        input(type='hidden', name='_csrf', value=token)
+        button(class="submitBtn", onclick="alert(\"Submitted\")") Soumettre
     - }
   - }
