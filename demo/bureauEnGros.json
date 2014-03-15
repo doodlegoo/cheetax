@@ -1,49 +1,49 @@
 {
-  "shop": {
-    "name":"Bureau en Gros"
-    "location": "Sherbrooke"
-    "telephone": 18191234576
-  }
-  "idTaxe": [  
-  {
-      "type": "TVQ"
-      "number": 1000575852
+    "shop": {
+        "name": "Bureau en Gros",
+        "location": "Sherbrooke",
+        "telephone": 18191234576
     },
-    {
-      "type": "TPS"
-      "number": 104902459
-    },
-  ],
-  "date" : "2013-10-27",
-  "time" : "15:39",
-  "items":[
-    {
-      "name" : "500-pack feuilles d'imprimante"
-	  "sku" : 13463
-      "price": 27.99
-      "quantity": 1
-      "taxable": true
-    },
-    {
-      "name" : "Cartouche d'encre HP A98"
-	  "sku" : 89587
-      "price": 62.99
-      "quantity": 1
-      "taxable": true
-    },
-    {
-      "name" : "4-pack Stylo Pilot Ball Frixion"
-      "sku" : 94538
-	  "price": 8.25
-      "quantity": 2
-      "taxable": true
-    },
-	{
-	  "name" : "3-license 1 an Kaspersky Pure 3.0"
-      "sku" : 68434
-	  "price": 200
-      "quantity": 1
-      "taxable": true
-  ],
-    
+    "idTaxe": [
+        {
+            "type": "TVQ",
+            "number": 1000575852
+        },
+        {
+            "type": "TPS",
+            "number": 104902459
+        }
+    ],
+    "date": "2013-10-27",
+    "time": "15:39",
+    "items": [
+        {
+            "name": "500-pack feuilles d'imprimante",
+            "sku": 13463,
+            "price": 27.99,
+            "quantity": 1,
+            "taxable": true
+        },
+        {
+            "name": "Cartouche d'encre HP A98",
+            "sku": 89587,
+            "price": 62.99,
+            "quantity": 1,
+            "taxable": true
+        },
+        {
+            "name": "4-pack Stylo Pilot Ball Frixion",
+            "sku": 94538,
+            "price": 8.25,
+            "quantity": 2,
+            "taxable": true
+        },
+        {
+            "name": "3-license 1 an Kaspersky Pure 3.0",
+            "sku": 68434,
+            "price": 200,
+            "quantity": 1,
+            "taxable": true
+        }
+    ]
 }
