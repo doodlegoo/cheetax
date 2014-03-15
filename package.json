@@ -1,0 +1,9 @@
+{
+  "name": "cheetax",
+  "description": "An HACK.SH project for managing expenses fast, relating to taxes.",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x"
+  }
+}
