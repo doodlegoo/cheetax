@@ -1,49 +1,48 @@
 {
-  "shop": {
-    "name":"IGA",
-    "location": "Sherbrooke",
-    "telephone": 18191234567
-  }
-  "idTaxe": [  
-  {
-      "type": "TVQ",
-      "number": 1000534711
+    "shop": {
+        "name": "IGA",
+        "location": "Sherbrooke",
+        "telephone": 18191234567
     },
-    {
-      "type": "TPS",
-      "number": 104902135
-    }
-  ]
-  "date" : "2013-10-25",
-  "time" : "13:37",
-  "items":[
-    {
-      "name" : "24-pack Budweiser",
-	  "sku" : 12143,
-      "price": 27.99,
-      "quantity": 5,
-      "taxable": true
-    },
-    {
-      "name" : "Redbull",
-	  "sku" : 09323,
-      "price": 2.99,
-      "quantity": 1,
-      "taxable": true
-    },
-    {
-      "name" : "Kleenex",
-	  "sku" : 65621,
-      "price": 1.20,
-      "quantity": 5,
-      "taxable": true
-    },
-    {
-      "name" : "Gaz",
-	  "sku" : 14242,
-      "price": 70,
-      "taxable": false
-    }
-  ]
-    
+    "idTaxe": [
+        {
+            "type": "TVQ",
+            "number": 1000534711
+        },
+        {
+            "type": "TPS",
+            "number": 104902135
+        }
+    ],
+    "date": "2013-10-25",
+    "time": "13:37",
+    "items": [
+        {
+            "name": "24-pack Budweiser",
+            "sku": 12143,
+            "price": 27.99,
+            "quantity": 5,
+            "taxable": true
+        },
+        {
+            "name": "Redbull",
+            "sku": 19323,
+            "price": 2.99,
+            "quantity": 1,
+            "taxable": true
+        },
+        {
+            "name": "Kleenex",
+            "sku": 65621,
+            "price": 1.2,
+            "quantity": 5,
+            "taxable": true
+        },
+        {
+            "name": "Gaz",
+            "sku": 14242,
+            "price": 70,
+            "taxable": false
+        }
+    ]
 }
